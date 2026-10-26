@@ -19,13 +19,11 @@ int main() {
 
     do {
         exibirMenu();
-        if (scanf("%d", &opcao) != 1) {
-            break;
-        }
-        while (opcao < 1 || opcao > 4) {
+        while (scanf("%d", &opcao) != 1 || opcao < 1 || opcao > 4) {
+            int c;
+            while ((c = getchar()) != '\n' && c != EOF);
             printf("Opção inválida! Tente novamente.\n");
             printf("Opção: ");
-            scanf("%d", &opcao);
         }
         if (opcao == 1) {
             char nome[100];
